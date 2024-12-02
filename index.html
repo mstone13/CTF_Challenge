@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF SQL Injection Challenge</title>
+</head>
+<body>
+    <h1>Super Duper Difficult CTF Challenge</h1>
+    <p>Click the word below to reveal a hint:</p>
+
+<!-- The clickable word -->
+<span id="hint">HINT</span>
+
+<!-- The hidden hint text -->
+<div id="hintText">
+    <p>Try a simple little SQL Injection!</p>
+</div>
+
+<!-- JavaScript to handle click event -->
+<script>
+    // Get the element for the clickable word and the hidden text
+    var hint = document.getElementById("hint");
+    var hintText = document.getElementById("hintText");
+
+    // Add a click event listener to the "HINT" word
+    hint.onclick = function() {
+        // Toggle the display of the hint text when "HINT" is clicked
+        if (hintText.style.display === "none") {
+            hintText.style.display = "block";  // Show the hint
+        } else {
+            hintText.style.display = "none";   // Hide the hint
+        }
+    };
+</script>
+    <form method="POST" action="login.php">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
